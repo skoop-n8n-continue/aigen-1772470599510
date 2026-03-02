@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Hello World App</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #10181f; /* Dark bg */
+            color: #00b7af; /* Primary teal */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden; /* App should fit the canvas */
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            border: 2px solid #6a7071; /* Secondary */
+            border-radius: 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            animation: pulse 4s infinite alternate;
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 6rem);
+            margin: 0 0 1rem 0;
+            text-shadow: 0 0 10px rgba(0, 183, 175, 0.5);
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 3rem);
+            color: #ffffff; /* Light bg color used for contrast text */
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 8px 32px rgba(0, 183, 175, 0.1); }
+            100% { transform: scale(1.02); box-shadow: 0 8px 32px rgba(0, 183, 175, 0.3); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello World</h1>
+        <p id="time-display">Loading time...</p>
+    </div>
+
+    <script>
+        // Use a cache-busting technique by reloading every hour if needed for digital signage,
+        // but for now, we just update the time nicely.
+
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.getElementById('time-display').textContent = `Current time: ${timeString}`;
+        }
+
+        // Initial call
+        updateTime();
+
+        // Update every second
+        setInterval(updateTime, 1000);
+
+        // Cache bust script dynamically loading if there were external assets
+        // For example:
+        // const script = document.createElement('script');
+        // script.src = 'app.js?v=' + new Date().getTime();
+        // document.body.appendChild(script);
+    </script>
+</body>
+</html>
