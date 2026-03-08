@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             background-color: #10181f; /* Dark bg */
-            color: #00b7af; /* Primary teal */
+            color: #ff4d4d; /* Bright red */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden; /* App should fit the canvas */
         }
@@ -25,10 +25,10 @@
         .container {
             text-align: center;
             padding: 2rem;
-            border: 2px solid #6a7071; /* Secondary */
+            border: 2px solid #ff0000; /* Red border */
             border-radius: 12px;
-            background-color: rgba(0, 0, 0, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 32px rgba(255, 0, 0, 0.5);
             animation: pulse 4s infinite alternate;
             max-width: 90%;
         }
@@ -36,7 +36,7 @@
         h1 {
             font-size: clamp(2rem, 5vw, 6rem);
             margin: 0 0 1rem 0;
-            text-shadow: 0 0 10px rgba(0, 183, 175, 0.5);
+            text-shadow: 0 0 15px rgba(255, 77, 77, 0.7);
             line-height: 1.2;
         }
 
@@ -44,12 +44,12 @@
             font-size: clamp(1rem, 2vw, 3rem);
             color: #ffffff; /* Light bg color used for contrast text */
             margin: 0;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 8px 32px rgba(0, 183, 175, 0.1); }
-            100% { transform: scale(1.02); box-shadow: 0 8px 32px rgba(0, 183, 175, 0.3); }
+            0% { transform: scale(1); box-shadow: 0 8px 32px rgba(255, 0, 0, 0.2); }
+            100% { transform: scale(1.02); box-shadow: 0 8px 32px rgba(255, 0, 0, 0.5); }
         }
     </style>
 </head>
